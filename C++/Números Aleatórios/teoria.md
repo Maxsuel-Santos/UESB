@@ -51,3 +51,44 @@ C++ oferece recursos melhores na biblioteca <random> (desde C++11):
 4. Thread-safe: Mais seguro para programação concorrente
 
 5. Padronizado: Comportamento consistente entre compiladores
+
+## O Antigo rand() e seus Problemas
+Antes do C++11, usava-se principalmente rand() e srand()
+
+### Problemas com rand():
+
+1. Qualidade ruim de aleatoriedade
+
+2. Distribuição não uniforme (especialmente com %)
+
+3. Período curto (tipicamente 2^32)
+
+4. Implementação varia entre compiladores
+
+5. Não thread-safe
+
+## Boas Práticas para Números Aleatórios
+
+1. Use <random> para código novo: É a abordagem moderna e superior
+
+2. Escolha o gerador adequado:
+
+    2.1 std::mt19937: Bom para a maioria dos casos
+
+    2.2std::random_device: Para criptografia (pode ser lento)
+
+3. Selecione a distribuição correta:
+
+    3.1 uniform_int_distribution: Inteiros uniformes
+
+    3.2uniform_real_distribution: Reais uniformes
+
+    3.3 normal_distribution: Distribuição normal (Gaussiana)
+
+4. Semeie adequadamente:
+
+    4.1 Para casos não críticos: use o relógio
+
+    4.2 Para segurança: std::random_device
+
+5. Evite rand() % n: Isso distorce a distribuição
