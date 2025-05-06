@@ -2,7 +2,7 @@
 
 using namespace std;
 
-unsigned int inverte(unsigned num);
+unsigned int inverte(unsigned int num);
 
 int main() {
     unsigned int num = 0;
@@ -15,11 +15,11 @@ int main() {
     return 0;
 }
 
-unsigned int inverte(unsigned num) {
+unsigned int inverte(unsigned int num) {
     int invertido = 0;
 
     while(num != 0) {
-        unsigned int digito = num % 10;
+        unsigned int digito = num % 10; 
         invertido = invertido * 10 + digito;
         num /= 10;
     }
