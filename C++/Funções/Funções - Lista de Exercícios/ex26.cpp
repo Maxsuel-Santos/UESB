@@ -7,7 +7,7 @@ using namespace std;
 int geradorAleatorio();
 
 int main() {
-    srand(time(0)); // Semente para números aleatórios
+    srand(time(0)); // Semente para números aleatórios (0 a RAND_MAX)
 
     int recorde = 0;
     char jogarNovamente;
