@@ -56,3 +56,21 @@ int main() {
 int geradorAleatorio() {
     return rand() % 50 + 1; // 1 a 50
 }
+
+// rand() gera um número inteiro aleatório entre 0 e RAND_MAX.
+// % 50 limita o valor para 0 a 49.
+// +1 desloca para 1 a 50.
+
+/*
+A fórmula geral para gerar números aleatórios em um intervalo [a, b] é:
+
+rand() % (b - a + 1) + a
+
+Exemplo para intervalo [126, 652]:
+int numero = rand() % (652 - 126 + 1) + 126; // rand() % 527 + 126
+
+Portanto, para mudar o intervalo na função gerador(), basta escrever:
+int gerador() {
+    return rand() % 527 + 126;  // Gera entre 126 e 652
+}
+*/
