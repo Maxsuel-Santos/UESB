@@ -12,7 +12,7 @@ void multiplos(T& soma, T x, int n) {
 }
 
 int main() {
-    int x = 0, n = 0, soma = 0;
+    float x = 0, n = 0, soma = 0;
 
     cout << "Valor de x: "; cin >> x;
     cout << "Valor de n: "; cin >> n;
