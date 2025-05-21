@@ -42,7 +42,7 @@ int compra_carta() {
 }
 
 /*int recorde(int num) {
-    //static int recorde = 0;
+    static int recorde = 0;
 }*/
 
 void jogo() {
