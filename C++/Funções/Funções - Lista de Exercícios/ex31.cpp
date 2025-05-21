@@ -10,8 +10,9 @@ enum cartas {
 };
 
 int compra_carta();
-void recorde();
+void recorde(int pontuacao);
 void jogo();
+string nomeCarta(int valor);
 //void line();
 
 int main() {
@@ -44,13 +45,12 @@ int compra_carta() {
 
 void recorde(int pontuacao) {
     static int recorde = 0;
-    if(recorde <= 21) {
-        if(pontuacao > recorde) {
-            recorde = pontuacao;
-            cout << "\033[1;32m" << "Você bateu o recorde!" << "\033[m";
-        } else {
-            cout << "\033[1;31m" << "Você não bateu o recorde!" << "\033[m" << endl;
-        }
+
+    if(pontuacao <= 21 && pontuacao > recorde) {
+        recorde = pontuacao;
+        cout << "\033[1;32m" << "Você bateu o recorde!" << "\033[m" << endl;
+    } else {
+        cout << "\033[1;31m" << "Você não bateu o recorde!" << "\033[m" << endl;
     }
     
     cout << "\033[1;36m" << "Pontuação da rodada: " << pontuacao << "\nRecorde: " << recorde << "\033[m" << endl;
@@ -68,9 +68,9 @@ void jogo() {
         soma += cartas_iniciais[i];
     }
 
-    cout << "Números das cartas sorteadas: " << endl;
+    cout << "Cartas sorteadas: " << endl;
     for(int i = 0; i < 3; i++) {
-        cout << cartas_iniciais[i] << endl;
+        cout << nomeCarta(cartas_iniciais[i]) << " (valor: " << cartas_iniciais[i] << ")" << endl;
     }
 
     cout << "\033[1;33m" << "Pontuação final: " << soma << "\033[m" << endl;
@@ -93,7 +93,6 @@ void jogo() {
 
                 if(soma > 21) {
                     cout << "\033[1;31m" << "VOCÊ PERDEU!" << "\033[m" << endl;
-                    soma = 0;
                     break;
                 } else if(soma == 21) {
                     cout << "\033[1;32m" << "VOCÊ VENCEU!" << "\033[m" << endl;
@@ -111,4 +110,20 @@ void jogo() {
     }
 
     recorde(soma);
+}
+
+string nomeCarta(int valor) {
+    switch(valor) {
+        case 1: return "Ás";
+        case 2: return "Dois";
+        case 3: return "Três";
+        case 4: return "Quatro";
+        case 5: return "Cinco";
+        case 6: return "Seis";
+        case 7: return "Sete";
+        case 8: return "Oito";
+        case 9: return "Nove";
+        case 10: return "Valete / Dama / Rei";
+        default: return "Desconhecida";
+    }
 }
