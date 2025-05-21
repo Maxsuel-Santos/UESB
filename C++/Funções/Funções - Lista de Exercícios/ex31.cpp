@@ -10,8 +10,9 @@ enum cartas {
 };
 
 int compra_carta();
-int recorde(int num);
+void recorde();
 void jogo();
+//void line();
 
 int main() {
     setlocale(LC_ALL, "Portuguese_Brazil");
@@ -41,9 +42,19 @@ int compra_carta() {
     }
 }
 
-/*int recorde(int num) {
+void recorde(int pontuacao) {
     static int recorde = 0;
-}*/
+    if(recorde <= 21) {
+        if(pontuacao > recorde) {
+            recorde = pontuacao;
+            cout << "\033[1;32m" << "Você bateu o recorde!" << "\033[m";
+        } else {
+            cout << "\033[1;31m" << "Você não bateu o recorde!" << "\033[m" << endl;
+        }
+    }
+    
+    cout << "\033[1;36m" << "Pontuação da rodada: " << pontuacao << "\nRecorde: " << recorde << "\033[m" << endl;
+}
 
 void jogo() {
     int cartas_iniciais[3] = {0};
@@ -82,6 +93,7 @@ void jogo() {
 
                 if(soma > 21) {
                     cout << "\033[1;31m" << "VOCÊ PERDEU!" << "\033[m" << endl;
+                    soma = 0;
                     break;
                 } else if(soma == 21) {
                     cout << "\033[1;32m" << "VOCÊ VENCEU!" << "\033[m" << endl;
@@ -97,4 +109,6 @@ void jogo() {
             }
         }
     }
+
+    recorde(soma);
 }
