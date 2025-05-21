@@ -41,9 +41,9 @@ int compra_carta() {
     }
 }
 
-int recorde(int num) {
+/*int recorde(int num) {
     //static int recorde = 0;
-}
+}*/
 
 void jogo() {
     int cartas_iniciais[3] = {0};
@@ -62,9 +62,39 @@ void jogo() {
         cout << cartas_iniciais[i] << endl;
     }
 
-    if(soma > 21) {
+    cout << "\033[1;33m" << "Pontuação final: " << soma << "\033[m" << endl;
+
+    if(soma > 21)
         cout << "\033[1;31m" << "VOCÊ PERDEU!" << "\033[m" << endl;
-    } else if(soma == 21) {
+    else if(soma == 21)
         cout << "\033[1;32m" << "VOCÊ VENCEU!" << "\033[m" << endl;
+    else {
+        while(true) {
+            char continuar;
+            cout << "Você ainda não alcançou 21 pontos. \nDeseja comprar mais uma carta? [S/N]: ";
+            cin >> continuar;
+
+            if(tolower(continuar) == 's') {
+                int nova_carta = compra_carta();
+                cout << "Valor da carta comprada: " << nova_carta << endl;
+                soma += nova_carta;
+                cout << "Sua pontuação: " << soma << endl;
+
+                if(soma > 21) {
+                    cout << "\033[1;31m" << "VOCÊ PERDEU!" << "\033[m" << endl;
+                    break;
+                } else if(soma == 21) {
+                    cout << "\033[1;32m" << "VOCÊ VENCEU!" << "\033[m" << endl;
+                    break;
+                }
+                else {
+                    continue;
+                }
+
+            } else {
+                cout << "Sua pontuação: " << soma << endl;
+                break;
+            }
+        }
     }
 }
