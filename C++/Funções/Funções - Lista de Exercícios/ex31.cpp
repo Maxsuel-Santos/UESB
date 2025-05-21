@@ -25,6 +25,7 @@ int main() {
 
     while(true) {
         char resp;
+        
         jogo();
 
         line();
