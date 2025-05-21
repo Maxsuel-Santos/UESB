@@ -13,18 +13,24 @@ int compra_carta();
 void recorde(int pontuacao);
 void jogo();
 string nomeCarta(int valor);
-//void line();
+void line();
 
 int main() {
     setlocale(LC_ALL, "Portuguese_Brazil");
     srand(time(0));
 
+    line();
+    cout << "----- BLACKJACK -----" << endl;
+    line();
+
     while(true) {
         char resp;
         jogo();
 
+        line();
         cout << "Deseja continuar? [S/N]: ";
         cin >> resp;
+        line();
 
         if(tolower(resp) != 's')
             break;
@@ -49,6 +55,8 @@ void recorde(int pontuacao) {
     if(pontuacao <= 21 && pontuacao > recorde) {
         recorde = pontuacao;
         cout << "\033[1;32m" << "Você bateu o recorde!" << "\033[m" << endl;
+    } else if(pontuacao == recorde) {
+        cout << "\033[1;32m" << "Sua pontuação é igual ao recorde!" << "\033[m" << endl;
     } else {
         cout << "\033[1;31m" << "Você não bateu o recorde!" << "\033[m" << endl;
     }
@@ -74,6 +82,7 @@ void jogo() {
     }
 
     cout << "\033[1;33m" << "Pontuação final: " << soma << "\033[m" << endl;
+    line();
 
     if(soma > 21)
         cout << "\033[1;31m" << "VOCÊ PERDEU!" << "\033[m" << endl;
@@ -82,12 +91,14 @@ void jogo() {
     else {
         while(true) {
             char continuar;
-            cout << "Você ainda não alcançou 21 pontos. \nDeseja comprar mais uma carta? [S/N]: ";
+
+            line();
+            cout << "\033[1;32m" << "Você ainda não alcançou 21 pontos. "<< "\033[m" << "\033[1;35m" << "\nDeseja comprar mais uma carta? [S/N]: " << "\033[m";
             cin >> continuar;
 
             if(tolower(continuar) == 's') {
                 int nova_carta = compra_carta();
-                cout << "Valor da carta comprada: " << nova_carta << endl;
+                cout << "\033[1;35m" << "Valor da carta comprada: " << nova_carta << "\033[m" << endl;
                 soma += nova_carta;
                 cout << "Sua pontuação: " << soma << endl;
 
@@ -101,6 +112,8 @@ void jogo() {
                 else {
                     continue;
                 }
+
+                line();
 
             } else {
                 cout << "Sua pontuação: " << soma << endl;
@@ -126,4 +139,8 @@ string nomeCarta(int valor) {
         case 10: return "Valete / Dama / Rei";
         default: return "Desconhecida";
     }
+}
+
+void line() {
+    cout << "===========================================================================" << endl;
 }
