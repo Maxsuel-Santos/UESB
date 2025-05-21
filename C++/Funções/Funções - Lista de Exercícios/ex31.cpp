@@ -1,6 +1,7 @@
 #include <iostream>
 #include <ctime>
 #include <cstdlib>
+#include <string>
 
 using namespace std;
 
@@ -14,6 +15,18 @@ void jogo();
 
 int main() {
     setlocale(LC_ALL, "Portuguese_Brazil");
+    srand(time(0));
+
+    while(true) {
+        char resp;
+        jogo();
+
+        cout << "Deseja continuar? [S/N]: ";
+        cin >> resp;
+
+        if(tolower(resp) != 's')
+            break;
+    }
 
     return 0;
 }
@@ -29,9 +42,29 @@ int compra_carta() {
 }
 
 int recorde(int num) {
-
+    //static int recorde = 0;
 }
 
 void jogo() {
+    int cartas_iniciais[3] = {0};
+    int soma = 0;
 
+    for(int i = 0; i < 3; i++) {
+        cartas_iniciais[i] = compra_carta();
+    }
+
+    for(int i = 0; i < 3; i++) {
+        soma += cartas_iniciais[i];
+    }
+
+    cout << "Números das cartas sorteadas: " << endl;
+    for(int i = 0; i < 3; i++) {
+        cout << cartas_iniciais[i] << endl;
+    }
+
+    if(soma > 21) {
+        cout << "\033[1;31m" << "VOCÊ PERDEU!" << "\033[m" << endl;
+    } else if(soma == 21) {
+        cout << "\033[1;32m" << "VOCÊ VENCEU!" << "\033[m" << endl;
+    }
 }
