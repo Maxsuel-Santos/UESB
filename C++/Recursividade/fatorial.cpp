@@ -2,7 +2,7 @@
 
 using namespace std;
 
-long int fatorial(int num);
+long long unsigned int fatorial(int num);
 
 int main() {
     int num = 0;
@@ -15,7 +15,7 @@ int main() {
     return 0;
 }
 
-long int fatorial(int num) {
+long long unsigned int fatorial(int num) {
     if(num == 1)
         return 1;
     else    
