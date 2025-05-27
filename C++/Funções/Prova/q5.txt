@@ -1,0 +1,6 @@
+5. 
+a) Na programação, uma função é uma bloco de código designado a modificar ou retornar um resultado dado uma entrada ou não. Uma função pode retornar um valor de um tipo primitivo, caso a mesma seja declarada de tal forma. Funções servem para dividir grandes problema em pequenos, fazendo com que o código fique mais "limpo" e melhor estruturado, além de ajudar e evitar repetição de código.
+
+b) Passagem por valor: o parâmetro da função recebe uma cópia do valor da variável original. Assim, qualquer alteração feita dentro da função não afeta a variável no programa principal.
+
+Passagem por referência: o parâmetro da função recebe o endereço de memória da variável original. Com isso, qualquer modificação feita dentro da função altera diretamente o conteúdo da variável original, pois ambas compartilham o mesmo espaço na memória.
