@@ -1,0 +1,8 @@
+3. 
+a) Uma função é dita default, quando um de seus parâmetros(variável) recebe por padrão um valor estabelecido pelo desenvolvedor, ou seja, ao invés de ficar "vazio" (sem valor), recebe uma valor numérico, booleano ou caracter.
+
+b) Uma função possui passagem por referência quando o símbolo & entá antes da variável (ex: int &valor). Isso significa, que essa variável terá o mesmo endereço de memória compartilhado com uma outra variável além da função em que esta esta, ou seja, quando altero o valor da variáel de referência, automaticamente o valor da outra variável (associada a essa) também será alterado. Se ocupam o mesmo espaço de memória, em teoria são iguais, possuem o mesmo valor.
+
+c) As funções de sobrecargas funcionam com sobreposição de nomes da função, ou seja, funções com a mesma assinatura (mesmos nomes) mas parâmetros diferentes. Elas possuem o mesmo nome mas podem fazer coisas distintas, como o cálculo da área de objetos.
+
+ABRA O ARQUIVO ex.cpp PARA VER UM EXEMPLO DE SOBRECARGA.
