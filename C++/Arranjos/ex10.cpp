@@ -3,9 +3,10 @@
 using namespace std;
 
 int main() {
-    unsigned int valores[10] = {0}, a[5] = {0}, b[5] = {0}, c[5] = {0}, cont = 0;
+    unsigned int valores[10] = {0}, a[5] = {0}, b[5] = {0}, cont = 0;
     int tamMaior = sizeof(valores) / sizeof(valores[0]);
     int tamMenor = sizeof(a) / sizeof(a[0]);
+    int c[5] = {0};
 
     for(int i = 0; i < tamMaior; i++) {
         cout << i+1 << "º VALOR: ";
