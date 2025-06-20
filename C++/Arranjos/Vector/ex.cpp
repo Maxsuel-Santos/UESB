@@ -44,8 +44,7 @@ int main() {
     sort(numeros.begin(), numeros.end()); // crescente
     reverse(numeros.begin(), numeros.end()); // inverte
 
-    // Buscar elemento
-    #include <algorithm>
+    // Buscar elemento (com <algorithm>)
     if (find(numeros.begin(), numeros.end(), 20) != numeros.end()) {
         cout << "20 encontrado!";
     }
