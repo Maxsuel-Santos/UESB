@@ -27,5 +27,7 @@ int main() {
     cout << "Novo valor de var modificado via ponteiro: " << var; // exibe o novo valor de var
     cout << endl;
     cout << "Conteudo apontado por ptr: " << *ptr; // exibe o novo conteúdo/valor apontado por 'ptr
+
+    // NOTA: É possível mudar o conteúdo de uma variável via ponteiro pelo motivo do ponteiro ter acesso ao local em que o conteúdo dessa variável está armazenado, alterando assim seu conteúdo;
     return 0;
 }
