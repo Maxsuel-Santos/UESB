@@ -15,9 +15,17 @@ int main() {
     cout << "Endereco apontado por ptr: " << ptr; // exibe o endereço de memória de 'var' que foi passada por referência
     cout << endl;
     cout << "Endereco do ponteiro: " << &ptr; // exibe o endereço do ponteiro
-
+    
     // OBS: Conteúdo é diferente de endereço: 
     // CONTEÚDO: É o valor, seja ele numérico, booleano ou alfabético, que está em uma variável;
     // ENDEREÇO: É um 'código' que nos diz o local em que o conteúdo da variável está armazenada na memória ram.
+
+    cout << endl << endl;
+
+    *ptr = 73; // utiliza o ponteiro 'ptr' para atualizar/mudar o conteúdo/valor de 'var'
+
+    cout << "Novo valor de var modificado via ponteiro: " << var; // exibe o novo valor de var
+    cout << endl;
+    cout << "Conteudo apontado por ptr: " << *ptr; // exibe o novo conteúdo/valor apontado por 'ptr
     return 0;
 }
