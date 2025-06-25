@@ -4,7 +4,7 @@ using namespace std;
 
 int main() {
     int var = 10;
-    int *ptr = &var; // ponteiros são passados por referência. O endereço de memória de 'var' está em ptr
+    int *ptr = &var; // ponteiros são passados por referência. O endereço de memória de 'var' está em 'ptr'
 
     cout << "Conteudo de var: " << var; // valor de 'var' => 10
     cout << endl;
@@ -13,6 +13,8 @@ int main() {
     cout << "Conteudo apontado por ptr: " << *ptr; // exibe o valor da variável 'var' que foi passada por referência
     cout << endl;
     cout << "Endereco apontado por ptr: " << ptr; // exibe o endereço de memória de 'var' que foi passada por referência
+    cout << endl;
+    cout << "Endereco do ponteiro: " << &ptr; // exibe o endereço do ponteiro
 
     // OBS: Conteúdo é diferente de endereço: 
     // CONTEÚDO: É o valor, seja ele numérico, booleano ou alfabético, que está em uma variável;
