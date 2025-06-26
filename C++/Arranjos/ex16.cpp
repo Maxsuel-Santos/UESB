@@ -3,7 +3,7 @@
 using namespace std;
 
 int main() {
-    int vetor[11], v[10], pos = 0;
+    int vetor[10] = {0}, v = 0, pos = 0;
     int tam = sizeof(vetor) / sizeof(vetor[0]);
     bool valor = false;
 
@@ -12,12 +12,12 @@ int main() {
         cin >> vetor[i];
     }
 
-    for(int i = 0; i < 10; i++) {
-        v[i] = vetor[i];
-    }
+    cout << "Informe o 11º valor: ";
+    cin >> v;     
 
+    // Vale apenas para o primeiro valor encontrado
     for(int i = 0; i < tam; i++) {
-        if(vetor[10] == v[i]) {
+        if(vetor[i] == v) {
             valor = true;
             pos = i;
             break;
@@ -25,7 +25,9 @@ int main() {
     }
 
     if(valor) {
-        cout << "POSICAO: " << pos;
+        cout << "VALOR ENCONTRADO E ESTA NA POSICAO: " << pos;
+    } else {
+        cout << "\033[1;31m" << "VALOR NAO ENCONTRADO!" << "\033[m";
     }
 
     return 0;
