@@ -80,6 +80,13 @@ int main() {
         B[linhas][j] = somaColuna;
     } 
 
+    // Cálculo do canto inferior direito (soma total) que verifica a soma dos elementos
+    double total = 0;
+    for (unsigned int i = 0; i < colunas; i++) {
+        total += B[linhas][i];
+    }
+    B[linhas][colunas] = total;
+    
     cout << endl << endl << setw(15) << "----- Matriz B ----- " << endl;
     // Usa-se <= pois B possui uma coluna e linha a mais que A
     for(unsigned int i = 0; i <= linhas; i++) {
