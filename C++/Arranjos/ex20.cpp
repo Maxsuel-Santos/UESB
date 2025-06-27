@@ -63,7 +63,15 @@ int main() {
 
     double somaLinha = 0, somaColuna = 0;
 
-    // Colunas
+    // Soma de linhas
+    for(unsigned int i = 0; i < linhas; i++) {
+        for(int j = 0; j < colunas; j++) {
+            somaColuna += A[i][j];
+        }
+        B[i][colunas];
+    }
+
+    // Soma de colunas
     for(unsigned int j = 0; j < colunas; j++) {
         for(unsigned int i = 0; i < linhas; i++) {
             somaLinha += A[i][j];
