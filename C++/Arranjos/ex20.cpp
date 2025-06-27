@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip>
 
 using namespace std;
 
@@ -36,14 +37,20 @@ int main() {
 
     // Inserção dos valores
     cout << "Digite os valores da matriz: " << endl;
-    for(int i = 0; i < linhas; i++) {
-        for(int j = 0; j < colunas; j++) {
+    for(unsigned int i = 0; i < linhas; i++) {
+        for(unsigned int j = 0; j < colunas; j++) {
             cout << "A[" << i << "][" << j << "] = ";
             cin >> A[i][j];
         }
     }
 
     // Impressão da matriz
+    for(unsigned int i = 0; i < linhas; i++) {
+        for(unsigned int j = 0; j < colunas; j++) {
+            cout << setw(8) << A[i][j];
+        }
+        cout << endl;
+    }
 
     return 0;
 }
