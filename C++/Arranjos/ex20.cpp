@@ -45,9 +45,10 @@ int main() {
     }
 
     // Impressão da matriz
+    cout << endl << endl << setw(15) << "----- Matriz A -----" << endl;
     for(unsigned int i = 0; i < linhas; i++) {
         for(unsigned int j = 0; j < colunas; j++) {
-            cout << setw(8) << A[i][j];
+            cout << setw(5) << A[i][j];
         }
         cout << endl;
     }
@@ -61,30 +62,32 @@ int main() {
         }
     }
 
-    // Soma de linhas
+    // Soma de linhas (linha extra)
     for(unsigned int i = 0; i < linhas; i++) {
         double somaLinha = 0; // Inicializa e/ou reseta a variável
-        for(int j = 0; j < colunas; j++) {
+        for(unsigned int j = 0; j < colunas; j++) {
             somaLinha += A[i][j];
         }
         B[i][colunas] = somaLinha;
     }
     
-    // Soma de colunas
+    // Soma de colunas (coluna extra)
     for(unsigned int j = 0; j < colunas; j++) {
         double somaColuna = 0; // Inicializa e/ou reseta a variável
         for(unsigned int i = 0; i < linhas; i++) {
             somaColuna += A[i][j];
         }
         B[linhas][j] = somaColuna;
-    }
+    } 
 
-    /*for(unsigned int i = 0; i < linhas; i++) {
-        for(unsigned int j = 0; j < colunas; j++) {
-            cout << setw(8) << B[i][j];
+    cout << endl << endl << setw(15) << "----- Matriz B ----- " << endl;
+    // Usa-se <= pois B possui uma coluna e linha a mais que A
+    for(unsigned int i = 0; i <= linhas; i++) {
+        for(unsigned int j = 0; j <= colunas; j++) {
+            cout << setw(5) << B[i][j];
         }
         cout << endl;
-    }*/
+    }
 
     return 0;
 }
