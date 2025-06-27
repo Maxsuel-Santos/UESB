@@ -32,7 +32,7 @@ int main() {
         }
     }
 
-    // Matriz personalizada
+    // Matriz A personalizada
     double A[linhas][colunas] = {0};
 
     // Inserção dos valores
@@ -51,6 +51,32 @@ int main() {
         }
         cout << endl;
     }
+
+    // Matriz B (com uma coluna e linha a mais)
+    double B[linhas + 1][colunas + 1] = {0};
+
+    for(unsigned int i = 0; i < linhas; i++) {
+        for(unsigned int j = 0; j < colunas; j++) {
+            B[i][j] = A[i][j];
+        }
+    }
+
+    double somaLinha = 0, somaColuna = 0;
+
+    // Colunas
+    for(unsigned int j = 0; j < colunas; j++) {
+        for(unsigned int i = 0; i < linhas; i++) {
+            somaLinha += A[i][j];
+        }
+        B[linhas][j] = somaLinha;
+    }
+
+    /*for(unsigned int i = 0; i < linhas; i++) {
+        for(unsigned int j = 0; j < colunas; j++) {
+            cout << setw(8) << B[i][j];
+        }
+        cout << endl;
+    }*/
 
     return 0;
 }
