@@ -61,22 +61,22 @@ int main() {
         }
     }
 
-    double somaLinha = 0, somaColuna = 0;
-
     // Soma de linhas
     for(unsigned int i = 0; i < linhas; i++) {
+        double somaLinha = 0; // Inicializa e/ou reseta a variável
         for(int j = 0; j < colunas; j++) {
-            somaColuna += A[i][j];
-        }
-        B[i][colunas];
-    }
-
-    // Soma de colunas
-    for(unsigned int j = 0; j < colunas; j++) {
-        for(unsigned int i = 0; i < linhas; i++) {
             somaLinha += A[i][j];
         }
-        B[linhas][j] = somaLinha;
+        B[i][colunas] = somaLinha;
+    }
+    
+    // Soma de colunas
+    for(unsigned int j = 0; j < colunas; j++) {
+        double somaColuna = 0; // Inicializa e/ou reseta a variável
+        for(unsigned int i = 0; i < linhas; i++) {
+            somaColuna += A[i][j];
+        }
+        B[linhas][j] = somaColuna;
     }
 
     /*for(unsigned int i = 0; i < linhas; i++) {
